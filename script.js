@@ -10,29 +10,41 @@ document.addEventListener("DOMContentLoaded", () => {
     if (menuToggle && navMenu) {
 
         menuToggle.addEventListener("click", () => {
+
             navMenu.classList.toggle("active");
 
             const icon = menuToggle.querySelector("i");
 
             if (navMenu.classList.contains("active")) {
+
                 icon.classList.remove("fa-bars");
                 icon.classList.add("fa-xmark");
+
             } else {
+
                 icon.classList.remove("fa-xmark");
                 icon.classList.add("fa-bars");
+
             }
+
         });
 
+
         navMenu.querySelectorAll("a").forEach(link => {
+
             link.addEventListener("click", () => {
+
                 navMenu.classList.remove("active");
 
                 const icon = menuToggle.querySelector("i");
 
                 icon.classList.remove("fa-xmark");
                 icon.classList.add("fa-bars");
+
             });
+
         });
+
     }
 
 
@@ -51,6 +63,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const day = String(today.getDate()).padStart(2, "0");
 
         dateInput.min = `${year}-${month}-${day}`;
+
     }
 
 
@@ -83,13 +96,17 @@ document.addEventListener("DOMContentLoaded", () => {
                 button.classList.add("selected");
 
                 callback(button.dataset.value);
+
             });
 
         });
+
     }
 
 
-    /* TIME */
+    /* =========================
+       TIME
+    ========================= */
 
     setupChoiceGroup("timeChoices", value => {
 
@@ -109,10 +126,13 @@ document.addEventListener("DOMContentLoaded", () => {
             otherTime.value = "";
 
         }
+
     });
 
 
-    /* SESSION TYPE */
+    /* =========================
+       SESSION TYPE
+    ========================= */
 
     setupChoiceGroup("sessionChoices", value => {
 
@@ -132,20 +152,29 @@ document.addEventListener("DOMContentLoaded", () => {
             otherEvent.value = "";
 
         }
+
     });
 
 
-    /* PEOPLE */
+    /* =========================
+       PEOPLE
+    ========================= */
 
     setupChoiceGroup("peopleChoices", value => {
+
         selectedPeople = value;
+
     });
 
 
-    /* PAYMENT */
+    /* =========================
+       PAYMENT
+    ========================= */
 
     setupChoiceGroup("paymentChoices", value => {
+
         selectedPayment = value;
+
     });
 
 
@@ -163,68 +192,112 @@ document.addEventListener("DOMContentLoaded", () => {
         event.preventDefault();
 
 
-        const fullName = document.getElementById("fullName").value.trim();
-        const phone = document.getElementById("phone").value.trim();
-        const date = document.getElementById("date").value;
-        const location = document.getElementById("location").value.trim();
+        const fullName =
+            document.getElementById("fullName").value.trim();
 
-        const otherTimeInput = document.getElementById("otherTime");
-        const otherEventInput = document.getElementById("otherEvent");
+        const phone =
+            document.getElementById("phone").value.trim();
+
+        const date =
+            document.getElementById("date").value;
+
+        const location =
+            document.getElementById("location").value.trim();
+
+        const otherTimeInput =
+            document.getElementById("otherTime");
+
+        const otherEventInput =
+            document.getElementById("otherEvent");
 
 
-        /* VALIDATION */
+        /* =========================
+           VALIDATION
+        ========================= */
 
         if (!fullName) {
+
             alert("Please enter your full name.");
             return;
+
         }
+
 
         if (!phone) {
+
             alert("Please enter your phone number.");
             return;
+
         }
+
 
         if (!date) {
+
             alert("Please select a date.");
             return;
+
         }
+
 
         if (!selectedTime) {
+
             alert("Please select a time.");
             return;
+
         }
 
-        if (selectedTime === "OTHER" && !otherTimeInput.value.trim()) {
+
+        if (
+            selectedTime === "OTHER" &&
+            !otherTimeInput.value.trim()
+        ) {
+
             alert("Please enter your preferred time.");
             return;
+
         }
+
 
         if (!location) {
+
             alert("Please enter the location.");
             return;
+
         }
 
+
         if (!selectedSession) {
+
             alert("Please select a session type.");
             return;
+
         }
+
 
         if (
             selectedSession === "OTHER EVENT" &&
             !otherEventInput.value.trim()
         ) {
+
             alert("Please describe your event.");
             return;
+
         }
+
 
         if (!selectedPeople) {
+
             alert("Please select the number of people.");
             return;
+
         }
 
+
         if (!selectedPayment) {
+
             alert("Please select a payment method.");
             return;
+
         }
 
 
@@ -232,17 +305,20 @@ document.addEventListener("DOMContentLoaded", () => {
            FORMAT DATE
         ========================= */
 
-        const selectedDate = new Date(date + "T12:00:00");
+        const selectedDate =
+            new Date(date + "T12:00:00");
 
-        const formattedDate = selectedDate.toLocaleDateString(
-            "en-US",
-            {
-                weekday: "long",
-                year: "numeric",
-                month: "long",
-                day: "numeric"
-            }
-        );
+
+        const formattedDate =
+            selectedDate.toLocaleDateString(
+                "en-US",
+                {
+                    weekday: "long",
+                    year: "numeric",
+                    month: "long",
+                    day: "numeric"
+                }
+            );
 
 
         /* =========================
@@ -253,6 +329,7 @@ document.addEventListener("DOMContentLoaded", () => {
             selectedTime === "OTHER"
                 ? otherTimeInput.value.trim()
                 : selectedTime;
+
 
         const finalSession =
             selectedSession === "OTHER EVENT"
@@ -279,7 +356,9 @@ Payment Method: ${selectedPayment}
 I have read and agree to the CM Creative Shots booking policy.`;
 
 
-        const whatsappNumber = "59995254792";
+        const whatsappNumber =
+            "59995254792";
+
 
         const whatsappURL =
             `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
@@ -289,7 +368,10 @@ I have read and agree to the CM Creative Shots booking policy.`;
            OPEN WHATSAPP
         ========================= */
 
-        window.open(whatsappURL, "_blank");
+        window.open(
+            whatsappURL,
+            "_blank"
+        );
 
     });
 

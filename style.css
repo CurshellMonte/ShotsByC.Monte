@@ -17,6 +17,7 @@
 
 html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
 body {
@@ -28,6 +29,7 @@ body {
     color: var(--white);
     min-height: 100vh;
     overflow-x: hidden;
+    width: 100%;
 }
 
 a {
@@ -64,6 +66,7 @@ input {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    min-width: 0;
 }
 
 .logo,
@@ -71,6 +74,7 @@ input {
     font-size: 18px;
     font-weight: 900;
     letter-spacing: 1px;
+    white-space: nowrap;
 }
 
 .logo span,
@@ -115,10 +119,12 @@ input {
     max-width: 1250px;
     margin: auto;
     padding: 120px 35px;
+    overflow: hidden;
 }
 
 .section-heading {
     margin-bottom: 45px;
+    max-width: 100%;
 }
 
 .section-heading p {
@@ -127,6 +133,7 @@ input {
     font-weight: 800;
     letter-spacing: 3px;
     margin-bottom: 10px;
+    overflow-wrap: anywhere;
 }
 
 .section-heading h2 {
@@ -134,6 +141,8 @@ input {
     line-height: 1;
     font-weight: 900;
     letter-spacing: -2px;
+    max-width: 100%;
+    overflow-wrap: anywhere;
 }
 
 
@@ -153,8 +162,10 @@ input {
 
 .hero-content {
     max-width: 780px;
+    width: 100%;
     position: relative;
     z-index: 2;
+    min-width: 0;
 }
 
 .small-title {
@@ -163,6 +174,8 @@ input {
     color: var(--light-green);
     letter-spacing: 5px;
     margin-bottom: 20px;
+    max-width: 100%;
+    overflow-wrap: anywhere;
 }
 
 .hero h1 {
@@ -171,6 +184,9 @@ input {
     font-weight: 900;
     letter-spacing: -5px;
     margin-bottom: 35px;
+    max-width: 100%;
+    overflow-wrap: anywhere;
+    word-break: normal;
 }
 
 .hero h1 span {
@@ -184,6 +200,7 @@ input {
     font-size: 17px;
     line-height: 1.9;
     margin-bottom: 38px;
+    overflow-wrap: anywhere;
 }
 
 .main-button,
@@ -203,6 +220,7 @@ input {
     letter-spacing: 1.2px;
     cursor: pointer;
     transition: 0.25s ease;
+    max-width: 100%;
 }
 
 .main-button:hover,
@@ -220,6 +238,7 @@ input {
     transform: translateY(-50%);
     border: 1px solid rgba(142, 182, 155, 0.18);
     border-radius: 50%;
+    pointer-events: none;
 }
 
 .hero-decoration::before,
@@ -252,6 +271,7 @@ input {
     backdrop-filter: blur(18px);
     -webkit-backdrop-filter: blur(18px);
     box-shadow: 0 25px 70px rgba(0, 0, 0, 0.15);
+    max-width: 100%;
 }
 
 .about-card {
@@ -263,6 +283,7 @@ input {
     font-size: 16px;
     line-height: 1.9;
     margin-bottom: 25px;
+    overflow-wrap: anywhere;
 }
 
 .about-card p:last-child {
@@ -288,6 +309,7 @@ input {
     font-size: 28px;
     font-weight: 900;
     margin-bottom: 9px;
+    overflow-wrap: anywhere;
 }
 
 .rules-title p {
@@ -295,6 +317,7 @@ input {
     font-size: 11px;
     font-weight: 800;
     letter-spacing: 2px;
+    overflow-wrap: anywhere;
 }
 
 .rules-list {
@@ -310,6 +333,7 @@ input {
     background: rgba(255, 255, 255, 0.035);
     border: 1px solid rgba(142, 182, 155, 0.12);
     border-radius: 15px;
+    min-width: 0;
 }
 
 .rule-item > span {
@@ -317,18 +341,21 @@ input {
     font-size: 13px;
     font-weight: 900;
     padding-top: 2px;
+    flex-shrink: 0;
 }
 
 .rule-item h4 {
     font-size: 13px;
     font-weight: 900;
     margin-bottom: 8px;
+    overflow-wrap: anywhere;
 }
 
 .rule-item p {
     color: var(--text-muted);
     font-size: 13px;
     line-height: 1.7;
+    overflow-wrap: anywhere;
 }
 
 .rules-footer {
@@ -340,6 +367,7 @@ input {
     line-height: 1.7;
     font-weight: 800;
     letter-spacing: 0.5px;
+    overflow-wrap: anywhere;
 }
 
 
@@ -353,6 +381,7 @@ input {
 
 .form-group {
     margin-bottom: 28px;
+    min-width: 0;
 }
 
 .form-group label {
@@ -362,10 +391,13 @@ input {
     letter-spacing: 1.5px;
     margin-bottom: 10px;
     color: var(--lighter-green);
+    overflow-wrap: anywhere;
 }
 
 .input-wrapper {
     position: relative;
+    width: 100%;
+    min-width: 0;
 }
 
 .input-wrapper i {
@@ -380,6 +412,7 @@ input {
 
 .input-wrapper input {
     width: 100%;
+    max-width: 100%;
     height: 58px;
     border: 1px solid rgba(142, 182, 155, 0.2);
     border-radius: 12px;
@@ -389,6 +422,7 @@ input {
     padding: 0 18px 0 50px;
     font-size: 14px;
     transition: 0.25s ease;
+    min-width: 0;
 }
 
 .input-wrapper input:focus {
@@ -405,6 +439,8 @@ input {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 10px;
+    width: 100%;
+    min-width: 0;
 }
 
 .choice-grid.three-columns {
@@ -427,6 +463,8 @@ input {
     letter-spacing: 0.5px;
     cursor: pointer;
     transition: 0.2s ease;
+    min-width: 0;
+    overflow-wrap: anywhere;
 }
 
 .choice-button:hover {
@@ -448,6 +486,7 @@ input {
 .hidden-input {
     display: none;
     width: 100%;
+    max-width: 100%;
     height: 55px;
     margin-top: 10px;
     padding: 0 18px;
@@ -457,6 +496,7 @@ input {
     background: rgba(255, 255, 255, 0.045);
     color: var(--white);
     font-size: 14px;
+    min-width: 0;
 }
 
 .hidden-input.show {
@@ -472,16 +512,19 @@ input {
     border: 1px solid rgba(142, 182, 155, 0.13);
     border-radius: 12px;
     background: rgba(255, 255, 255, 0.025);
+    min-width: 0;
 }
 
 .agreement-box i {
     color: var(--light-green);
+    flex-shrink: 0;
 }
 
 .agreement-box span {
     color: var(--text-muted);
     font-size: 11px;
     line-height: 1.5;
+    overflow-wrap: anywhere;
 }
 
 .submit-button {
@@ -494,6 +537,7 @@ input {
     color: rgba(255, 255, 255, 0.4);
     font-size: 10px;
     margin-top: 15px;
+    overflow-wrap: anywhere;
 }
 
 
@@ -505,6 +549,7 @@ input {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 16px;
+    min-width: 0;
 }
 
 .contact-card {
@@ -517,6 +562,7 @@ input {
     background: var(--glass);
     border: 1px solid var(--glass-border);
     transition: 0.25s ease;
+    min-width: 0;
 }
 
 .contact-card:hover {
@@ -555,12 +601,14 @@ input {
     font-size: 14px;
     font-weight: 700;
     overflow-wrap: anywhere;
+    word-break: break-word;
 }
 
 .contact-arrow {
     margin-left: auto;
     color: rgba(255, 255, 255, 0.35);
     font-size: 12px;
+    flex-shrink: 0;
 }
 
 
@@ -571,12 +619,15 @@ input {
 .footer {
     border-top: 1px solid rgba(142, 182, 155, 0.12);
     padding: 55px 35px;
+    width: 100%;
+    overflow: hidden;
 }
 
 .footer-content {
     max-width: 1250px;
     margin: auto;
     text-align: center;
+    max-width: 100%;
 }
 
 .footer-logo {
@@ -586,6 +637,7 @@ input {
 .footer-content > p {
     color: var(--text-muted);
     font-size: 12px;
+    overflow-wrap: anywhere;
 }
 
 .footer-links {
@@ -684,66 +736,119 @@ input {
 
 @media (max-width: 500px) {
 
+    body {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
     .nav-container {
         padding: 17px 18px;
+        width: 100%;
+        max-width: 100%;
     }
 
     .logo {
-        font-size: 14px;
+        font-size: 13px;
+        max-width: calc(100% - 50px);
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
 
     .hero {
         min-height: 100svh;
+        width: 100%;
+        max-width: 100%;
         padding: 125px 18px 75px;
+        overflow: hidden;
+    }
+
+    .hero-content {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
     }
 
     .small-title {
         font-size: 11px;
         letter-spacing: 3px;
+        max-width: 100%;
     }
 
     .hero h1 {
-        font-size: clamp(43px, 13vw, 65px);
-        letter-spacing: -3px;
+        font-size: clamp(38px, 11.5vw, 58px);
+        line-height: 0.95;
+        letter-spacing: -2.5px;
+        max-width: 100%;
+        overflow-wrap: anywhere;
+        word-break: break-word;
+    }
+
+    .hero h1 span {
+        max-width: 100%;
+        overflow-wrap: anywhere;
     }
 
     .hero-text {
         font-size: 14px;
         line-height: 1.75;
+        max-width: 100%;
+        overflow-wrap: anywhere;
+    }
+
+    .main-button {
+        max-width: 100%;
+    }
+
+    .hero-decoration {
+        display: none !important;
     }
 
     .section {
+        width: 100%;
+        max-width: 100%;
         padding: 80px 18px;
+        overflow: hidden;
     }
 
     .section-heading {
         margin-bottom: 30px;
+        max-width: 100%;
     }
 
     .section-heading h2 {
         font-size: 42px;
         letter-spacing: -1.5px;
+        max-width: 100%;
+        overflow-wrap: anywhere;
+        word-break: break-word;
     }
 
     .about-card,
     .rules-card,
     .booking-card {
+        width: 100%;
+        max-width: 100%;
         padding: 25px 18px;
         border-radius: 18px;
+        overflow: hidden;
     }
 
     .about-card p {
         font-size: 14px;
         line-height: 1.8;
+        overflow-wrap: anywhere;
     }
 
     .rules-title h3 {
         font-size: 22px;
+        overflow-wrap: anywhere;
     }
 
     .rule-item {
         padding: 19px;
         gap: 14px;
+        min-width: 0;
     }
 
     .rule-item h4 {
@@ -756,6 +861,7 @@ input {
 
     .choice-grid {
         grid-template-columns: repeat(2, 1fr);
+        width: 100%;
     }
 
     .choice-grid.three-columns {
@@ -772,12 +878,25 @@ input {
 
     .choice-button {
         min-height: 55px;
+        width: 100%;
         font-size: 10px;
         padding: 8px;
     }
 
+    .input-wrapper {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .input-wrapper input {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+    }
+
     .input-wrapper input[type="date"] {
         width: 100%;
+        max-width: 100%;
         min-width: 0;
         display: block;
         -webkit-appearance: none;
@@ -786,8 +905,22 @@ input {
         padding-right: 18px;
     }
 
+    .hidden-input {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+    }
+
+    .contact-grid {
+        width: 100%;
+        max-width: 100%;
+    }
+
     .contact-card {
+        width: 100%;
+        max-width: 100%;
         padding: 18px;
+        min-width: 0;
     }
 
     .contact-icon {
@@ -798,10 +931,20 @@ input {
 
     .contact-card strong {
         font-size: 12px;
+        overflow-wrap: anywhere;
+        word-break: break-word;
     }
 
     .footer {
         padding: 45px 18px;
+        width: 100%;
+        overflow: hidden;
+    }
+
+    .footer-logo {
+        font-size: 14px;
+        white-space: normal;
+        overflow-wrap: anywhere;
     }
 
     .footer-links {
@@ -817,8 +960,29 @@ input {
 
 @media (max-width: 380px) {
 
+    .nav-container {
+        padding-left: 14px;
+        padding-right: 14px;
+    }
+
+    .logo {
+        font-size: 11px;
+        letter-spacing: 0.5px;
+    }
+
+    .hero {
+        padding-left: 14px;
+        padding-right: 14px;
+    }
+
     .hero h1 {
-        font-size: 40px;
+        font-size: 37px;
+        letter-spacing: -2px;
+    }
+
+    .section {
+        padding-left: 14px;
+        padding-right: 14px;
     }
 
     .section-heading h2 {
